@@ -1,15 +1,15 @@
-# telegram-alert
+# py-telegram-alert
 
 Simple, async-first Telegram alerts for Python.
 
-[![PyPI version](https://badge.fury.io/py/telegram-alert.svg)](https://badge.fury.io/py/telegram-alert)
+[![PyPI version](https://badge.fury.io/py/py-telegram-alert.svg)](https://badge.fury.io/py/py-telegram-alert)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 ## Installation
 
 ```bash
-pip install telegram-alert
+pip install py-telegram-alert
 ```
 
 ## Setup

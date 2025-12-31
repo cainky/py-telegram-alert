@@ -1,5 +1,5 @@
 """
-telegram-alert: Simple, async-first Telegram alerts for Python.
+py-telegram-alert: Simple, async-first Telegram alerts for Python.
 
 Basic usage:
     >>> from telegram_alert import TelegramAlert
