@@ -14,15 +14,17 @@ Basic usage:
     >>> await alert.send(f"Download: {progress_bar(75, 100)}")
 """
 
-from .client import TelegramAlert
+from .client import FileType, TelegramAlert
 from .exceptions import ConfigError, RateLimitError, SendError, TelegramAlertError
 from .formatters import escape_markdown, progress_bar, truncate
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 __all__ = [
     # Main client
     "TelegramAlert",
+    # Types
+    "FileType",
     # Exceptions
     "TelegramAlertError",
     "ConfigError",

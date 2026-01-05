@@ -128,6 +128,36 @@ async with TelegramAlert() as alert:
     await alert.send("Message 2")  # Reuses connection
 ```
 
+### File Attachments
+
+Send photos, documents, videos, audio, and more:
+
+```python
+# Send a file (type auto-detected from extension)
+await alert.send_file("screenshot.png")
+await alert.send_file("report.pdf", caption="Monthly report")
+
+# Send with explicit type
+await alert.send_file("data.bin", file_type="document")
+
+# Send raw bytes
+await alert.send_file(image_bytes, filename="chart.png")
+
+# With formatted caption
+await alert.send_file("photo.jpg", caption="*Important* update", parse_mode="MarkdownV2")
+
+# Sync version
+alert.send_file_sync("export.csv", caption="Data export")
+```
+
+**Supported file types** (auto-detected from extension):
+- `photo` - jpg, jpeg, png, webp
+- `video` - mp4, mov, avi, mkv, webm
+- `audio` - mp3, wav, flac, m4a
+- `voice` - ogg
+- `animation` - gif
+- `document` - everything else (default)
+
 ### Error Handling
 
 ```python
@@ -171,12 +201,16 @@ alert = TelegramAlert(
 # Async methods
 await alert.send(message, parse_mode=None, silent=False, ...)
 await alert.send_to(chat_id, message, ...)
+await alert.send_file(file, caption=None, file_type=None, filename=None, ...)
+await alert.send_file_to(chat_id, file, ...)
 await alert.test()  # Verify credentials
 await alert.close()  # Close connections
 
 # Sync wrappers
 alert.send_sync(message, ...)
 alert.send_to_sync(chat_id, message, ...)
+alert.send_file_sync(file, ...)
+alert.send_file_to_sync(chat_id, file, ...)
 alert.test_sync()
 
 # Properties
